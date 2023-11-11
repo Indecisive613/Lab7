@@ -1,9 +1,6 @@
 package org.example;
 
 public class ResidentialSite extends Site{
-    double _units;
-    double _rate;
-
     /**
      * Create a residential site
      *
@@ -11,16 +8,14 @@ public class ResidentialSite extends Site{
      * @param rate
      */
     public ResidentialSite(double unit, double rate){
-        this._units = unit;
-        this._rate = rate;
+        super(unit, rate);
     }
 
-    /**
-     * @return the billable amount
-     */
-    public double getBillableAmount(){
-        double base = _units * _rate;
-        double tax = base * Site.TAX_RATE;
-        return base + tax;
+    public double getBaseAmount(){
+        return 1;
+    }
+
+    public double getTaxAmount(){
+        return 1;
     }
 }
